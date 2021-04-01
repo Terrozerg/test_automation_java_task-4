@@ -10,6 +10,16 @@ public class Task2 {
      * IllegalArgumentException
      */
     public static int[] transform(int[] array, SortOrder order) {
-        throw new UnsupportedOperationException();
+        if(array == null || order == null){
+            throw new IllegalArgumentException("Cannot pass null params.");
+        }
+
+        if(Task1.isSorted(array,order)){
+            for (int i = 0; i < array.length; i++) {
+                array[i]+=i;
+            }
+        }
+
+        return array;
     }
 }

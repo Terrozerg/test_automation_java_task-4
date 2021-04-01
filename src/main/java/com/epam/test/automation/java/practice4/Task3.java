@@ -10,6 +10,15 @@ public class Task3 {
      * IllegalArgumentException
      */
     public static int multiArithmeticElements(int a1, int t, int n) {
-        throw new UnsupportedOperationException();
+        if(n <= 0){
+            throw new IllegalArgumentException("Cannot pass 0 or less elem numbers.");
+        }
+        int result = 1;
+
+        for (int i = a1; n > 0; n--, i+=t) {
+            result*=i;
+        }
+
+        return result;
     }
 }
