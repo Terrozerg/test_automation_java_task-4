@@ -21,7 +21,7 @@ public class Task1 {
         }
 
         for (int i = 0; i < array.length-1; i++) {
-            if (array[i] > array[i + 1] == condition) {
+            if (array[i] < array[i + 1] != condition && array[i] != array[i + 1]) {
                 return false;
             }
         }

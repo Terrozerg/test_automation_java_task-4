@@ -18,6 +18,18 @@ public class TestsTask1 {
     }
 
     @Test
+    public void sortedASCArrayAllEqualTest(){
+        int[] array = {1, 1, 1, 1, 1};
+        Assert.assertTrue(Task1.isSorted(array, SortOrder.ASC));
+    }
+
+    @Test
+    public void sortedDESCArrayAllEqualTest(){
+        int[] array = {1, 1, 1, 1, 1};
+        Assert.assertTrue(Task1.isSorted(array, SortOrder.DESC));
+    }
+
+    @Test
     public void notSortedArrayTest(){
         int[] array = {9, 15, -91, 5, 1};
         Assert.assertFalse(Task1.isSorted(array, SortOrder.ASC));

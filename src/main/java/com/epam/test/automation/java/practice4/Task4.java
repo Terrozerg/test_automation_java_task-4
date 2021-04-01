@@ -22,11 +22,11 @@ public class Task4 {
         }
 
         double result = 0;
-        double temp = a1;
+        double last = a1;
 
-        while (temp>alim){
-            result+=temp;
-            temp=temp*t;
+        while (last > alim && last > 0.00000001){
+            result+=last;
+            last=last*t;
         }
 
         return Math.round(result);

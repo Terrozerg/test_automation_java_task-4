@@ -5,9 +5,14 @@ import org.testng.annotations.Test;
 
 public class TestsTask4 {
     @Test
-    public void positiveValuesTest(){
+    public void positiveDecreasingValuesTest(){
         Assert.assertEquals(Task4.sumGeometricElements(4236,0.4,60),6988.0);
         Assert.assertEquals(Task4.sumGeometricElements(100,0.5,20),175);
+    }
+
+    @Test
+    public void timeoutTest(){
+        Assert.assertEquals(Task4.sumGeometricElements(100,0.9,0),1000);
     }
 
     @Test
