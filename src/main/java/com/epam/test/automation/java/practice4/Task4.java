@@ -1,6 +1,7 @@
 package com.epam.test.automation.java.practice4;
 
 public class Task4 {
+    private Task4(){}
 
     /**
      * <summary>
@@ -16,8 +17,8 @@ public class Task4 {
         if(alim < 0){
             throw new IllegalArgumentException("Passed limit cannot be < 0.");
         }
-        if(a1 < alim){
-            throw new IllegalArgumentException("Passed initial element cannot be < limit.");
+        if(a1 <= alim){
+            throw new IllegalArgumentException("Passed initial element cannot be <= limit.");
         }
 
         double result = 0;

@@ -13,19 +13,24 @@ public class TestsTask4 {
     @Test
     public void borderValueTest(){
         Assert.assertEquals(Task4.sumGeometricElements(Integer.MAX_VALUE,0.1,60),2.386092917E9);
-        Assert.assertEquals(Task4.sumGeometricElements(100,0.5,100),0);
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class,
-            expectedExceptionsMessageRegExp = "Passed initial element cannot be < limit.")
+            expectedExceptionsMessageRegExp = "Passed initial element cannot be <= limit.")
     public void negativeInitElemTest(){
         Task4.sumGeometricElements(-4236,0.4,60);
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class,
-            expectedExceptionsMessageRegExp = "Passed initial element cannot be < limit.")
+            expectedExceptionsMessageRegExp = "Passed initial element cannot be <= limit.")
     public void initElemLessThenLimitTest(){
         Task4.sumGeometricElements(4236,0.4,606436);
+    }
+
+    @Test(expectedExceptions = IllegalArgumentException.class,
+            expectedExceptionsMessageRegExp = "Passed initial element cannot be <= limit.")
+    public void initElemEqualsLimitTest(){
+        Task4.sumGeometricElements(4236,0.4,4236);
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class,

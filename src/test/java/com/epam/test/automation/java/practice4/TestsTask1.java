@@ -3,6 +3,7 @@ package com.epam.test.automation.java.practice4;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+@SuppressWarnings("ResultOfMethodCallIgnored")
 public class TestsTask1 {
     @Test
     public void sortedDESCArrayTest(){
@@ -24,13 +25,20 @@ public class TestsTask1 {
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class,
-            expectedExceptionsMessageRegExp = "Cannot pass null params.")
+            expectedExceptionsMessageRegExp = "Cannot pass null or empty params.")
     public void nullArrayTest(){
         Task1.isSorted(null,SortOrder.ASC);
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class,
-            expectedExceptionsMessageRegExp = "Cannot pass null params.")
+            expectedExceptionsMessageRegExp = "Cannot pass null or empty params.")
+    public void zeroLengthArrayTest(){
+        int[] array = new int[]{};
+        Task1.isSorted(array,SortOrder.ASC);
+    }
+
+    @Test(expectedExceptions = IllegalArgumentException.class,
+            expectedExceptionsMessageRegExp = "Cannot pass null or empty params.")
     public void nullOrderTest(){
         int[] array = {17, 15, 9, 5, -11};
         Task1.isSorted(array,null);

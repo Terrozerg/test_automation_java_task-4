@@ -1,6 +1,7 @@
 package com.epam.test.automation.java.practice4;
 
 public class Task3 {
+    private Task3(){}
 
     /**
      * <summary>

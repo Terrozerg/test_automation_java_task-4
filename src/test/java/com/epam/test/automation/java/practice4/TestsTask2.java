@@ -25,13 +25,13 @@ public class TestsTask2 {
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class,
-    expectedExceptionsMessageRegExp = "Cannot pass null params.")
+    expectedExceptionsMessageRegExp = "Cannot pass null or empty params.")
     public void nullArrayTest(){
         Task2.transform(null,SortOrder.ASC);
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class,
-    expectedExceptionsMessageRegExp = "Cannot pass null params.")
+    expectedExceptionsMessageRegExp = "Cannot pass null or empty params.")
     public void nullOrderTest(){
         int[] array = {17, 15, 9, 5, 1};
         Task2.transform(array,null);
